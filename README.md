@@ -1,49 +1,88 @@
-# GelasFileDrop
+# GelasFileDrop – Secure File Transfer System
 
-In veel organisaties moeten bestanden veilig worden uitgewisseld tussen systemen. Denk aan bedrijfsdocumenten, software builds of gevoelige gegevens. Wanneer bestandsoverdracht niet goed beveiligd is kan dit leiden tot datalekken, manipulatie van bestanden of ongeautoriseerde toegang. In dit project ontwikkelen we een veilig bestandstransfersysteem waarmee bestanden veilig kunnen worden verzonden tussen systemen. Het systeem moet rekening houden met vertrouwelijkheid (confidentiality), integriteit (integrity) en authenticatie (authentication).
+## Projectbeschrijving
 
-# Achtergrond en Probleemstelling
+GelasFileDrop is een beveiligd bestandstransfersysteem waarmee gebruikers bestanden kunnen uploaden en downloaden binnen een afgeschermde omgeving. Het systeem is ontwikkeld met focus op de drie belangrijkste principes van informatiebeveiliging: vertrouwelijkheid, integriteit en authenticatie.
 
-In moderne organisaties is het heel belangrijk om digitale bestanden veilig uit te wisselen tussen verschillende systemen. Denk hierbij aan het overdragen van gevoelige bedrijfsdocumenten, software builds of persoonsgegevens.
+## Doel
 
-Wanneer deze bestanden via onveilige kanalen of oude protocollen worden overgedragen, ontstaan er grote risico's. Dit kan leiden tot:
+Het doel van GelasFileDrop is om bestanden veilig uit te wisselen tussen gebruikers en systemen, terwijl risico's zoals datalekken, bestandsmanipulatie en ongeautoriseerde toegang worden voorkomen.
 
-Datalekken: gevoelige informatie die op straat komt te liggen.
+## Beveiliging
 
-Bestandsmanipulatie: kwaadwillenden die data ongemerkt aanpassen tijdens het transport.
+### Vertrouwelijkheid
 
-Ongeautoriseerde toegang: personen of systemen die toegang krijgen tot bestanden waar zij geen rechten voor hebben.
+* Alleen ingelogde gebruikers hebben toegang tot het systeem.
+* Het systeem maakt gebruik van HTTPS om gegevens tijdens transport te beveiligen.
+* Bestanden zijn alleen toegankelijk voor geautoriseerde gebruikers.
 
-Om deze risico's te minimaliseren, is er behoefte aan een centraal, robuust en veilig bestandstransfersysteem.
+### Integriteit
 
-# Projectdoelstelling
+* Bestanden worden gecontroleerd tijdens het uploadproces.
+* Alleen toegestane bestandstypen worden geaccepteerd.
+* Ongeldige bestanden worden geweigerd.
 
-Het doel van dit project is om een Secure File Transfer System te ontwerpen, ontwikkelen en implementeren. Dit systeem zorgt ervoor dat bestanden tussen systemen worden uitgewisseld met strikte naleving van de drie belangrijkste principes van informatiebeveiliging: vertrouwelijkheid, integriteit en authenticatie.
+### Authenticatie
 
-# Functionele en Technische Vereisten
+* Gebruikers moeten inloggen voordat zij bestanden kunnen uploaden of downloaden.
+* Sessiebeheer wordt gebruikt om gebruikers geauthenticeerd te houden.
 
-Het systeem zal worden gebouwd rondom de volgende drie belangrijkste onderdelen:
+## Functionaliteiten
 
-Vertrouwelijkheid:
+* Inloggen en uitloggen van gebruikers
+* Sessiebeheer
+* Beveiligde bestand-upload
+* Downloaden van bestanden via een unieke link
+* Opslaan van bestanden in een database
+* Automatische generatie van downloadlinks
+* Logging van uploads en downloads
+* Logging van mislukte inlogpogingen
+* Gebruikersvriendelijke foutmeldingen
 
-Alle bestanden moeten tijdens het transport versleuteld zijn met moderne, sterke encryptieprotocollen.
+## Database
 
-Bestanden die tijdelijk of permanent op de server worden opgeslagen, dienen te worden versleuteld.
+Bestanden worden opgeslagen in een database met de volgende gegevens:
 
-Integriteit:
+* Unieke ID
+* Bestandsnaam
+* Bestandstype
+* Bestandsinhoud
 
-Het systeem moet bij verzending en ontvangst automatisch cryptografische hashes berekenen en vergelijken. Hiermee wordt gegarandeerd dat het bestand onderweg niet is aangepast of beschadigd.
+## Beveiligingsmaatregelen
 
-Indien een hash niet overeenkomt, wordt de overdracht afgebroken en krijgt de beheerder een melding.
+* HTTPS verplicht
+* Alleen geauthenticeerde toegang
+* Bestandstypecontrole
+* Bestandsgroottecontrole
+* Veilige databasequeries (PDO)
+* Logging van belangrijke acties
+* Foutafhandeling voor uploads, downloads en authenticatie
 
-Authenticatie en Autorisatie:
+## Logging
 
-Systemen die bestanden verzenden of ontvangen moeten zich verplicht authenticeren.
+Het systeem registreert belangrijke gebeurtenissen, waaronder:
 
-Er wordt een strikt rechtensysteem toegepast, zodat systemen alleen toegang hebben tot de specifieke mappen en bestanden die voor hen bedoeld zijn.
+* Uploads van bestanden
+* Downloads van bestanden
+* Mislukte inlogpogingen
 
-# Beoogde Resultaten
+Deze logs helpen bij monitoring, controle en probleemoplossing.
 
-Een document met de architectuur- en beveiligingsontwerp.
+## Mogelijke verbeteringen
 
-Een functionerend bestandstransfersysteem dat aan de veiligheidseisen voldoet.
+* Encryptie van opgeslagen bestanden
+* Hashing voor integriteitscontrole
+* Tijdelijke downloadlinks
+* Rollen en rechtenbeheer
+* Uitgebreidere monitoring en logging
+
+## Team
+
+Projectweek 3 Cybersecurity
+
+Ontwikkeld door:
+
+* Gabriel
+* Keano
+* Roni
+* Jayden
